@@ -19,37 +19,38 @@
 
 namespace cs {
 
-// ---------
-// has_cycle
-// ---------
+  // ---------
+  // has_cycle
+  // ---------
 
-/**
- * depth-first traversal
- * three colors
- * <your documentation>
- */
-template <typename G>
-bool has_cycle (const G& g) {
-    return true;}
+  /**
+   * depth-first traversal
+   * three colors
+   * <your documentation>
+   */
+  template <typename G>
+  bool has_cycle (const G& g) {
+    return true;
+  }
 
-// ----------------
-// topological_sort
-// ----------------
+  // ----------------
+  // topological_sort
+  // ----------------
 
-/**
- * depth-first traversal
- * two colors
- * <your documentation>
- * Precondition: !has_cycle(g)
- */
-template <typename G, typename OI>
-void topological_sort (const G& g, OI x) {
+  /**
+   * depth-first traversal
+   * two colors
+   * <your documentation>
+   * Precondition: !has_cycle(g)
+   */
+  template <typename G, typename OI>
+  void topological_sort (const G& g, OI x) {
     *x = 2;
     ++x;
     *x = 0;
     ++x;
     *x = 1;
-    }
+  }
 
 } // cs
 
