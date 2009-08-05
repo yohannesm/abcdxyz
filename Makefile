@@ -1,7 +1,7 @@
 VALGRIND ?= valgrind
 DOXYGEN ?= doxygen
 CC = g++
-EXTRA_CPPFLAGS += -g -ggdb -ansi -pedantic -Wall
+EXTRA_CPPFLAGS += -g -ggdb -ansi -pedantic -I/public/linux/include/boost-1_38 -Wall
 TEST_LDFLAGS = -lcppunit -ldl
 TEST_CPPFLAGS = -DTEST
 EXECUTABLE = main.app
