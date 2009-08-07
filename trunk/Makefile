@@ -4,12 +4,12 @@ CC = g++
 EXTRA_CPPFLAGS += -g -ggdb -ansi -pedantic -I/public/linux/include/boost-1_38 -Wall
 TEST_LDFLAGS = -lcppunit -ldl
 TEST_CPPFLAGS = -DTEST
-EXECUTABLE = main.app
+EXECUTABLE = main
 DOXYFILE = Doxyfile
 
 all: clean docs $(EXECUTABLE) $(TEST_EXEC)
 
-$(EXECUTABLE): main.c++
+$(EXECUTABLE): main.cpp
 	$(CC) $(EXTRA_CPPFLAGS) $(TEST_LDFLAGS) $(TEST_CPPFLAGS) $< -o $@
 
 docs: $(DOXYFILE)
