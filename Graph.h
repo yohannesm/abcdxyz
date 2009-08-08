@@ -85,9 +85,9 @@ namespace cs {
 
     class edge_iterator {
     private:
+      const Graph* thegraph;
       vertex_iterator vpos;
       std::set<vertex_descriptor>::iterator epos;
-      const Graph* thegraph;
     public:
       edge_iterator(const Graph* g, start_tag) : thegraph(g), vpos(vertex_iterator(0)),
 				       epos(thegraph->g[*vpos].begin()) {}

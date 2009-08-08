@@ -4,12 +4,12 @@ CC = g++
 EXTRA_CPPFLAGS += -g -ggdb -ansi -pedantic -I/public/linux/include/boost-1_38 -Wall
 TEST_LDFLAGS = -lcppunit -ldl
 TEST_CPPFLAGS = -DTEST
-EXECUTABLE = main
+EXECUTABLE = main.app
 DOXYFILE = Doxyfile
 
 all: clean docs $(EXECUTABLE) $(TEST_EXEC)
 
-$(EXECUTABLE): main.cpp
+$(EXECUTABLE): main.cpp TestGraph.h Graph.h
 	$(CC) $(EXTRA_CPPFLAGS) $(TEST_LDFLAGS) $(TEST_CPPFLAGS) $< -o $@
 
 docs: $(DOXYFILE)
@@ -22,9 +22,5 @@ clean:
 distclean: clean
 	rm -f $(DOXYFILE)
 
-$(DOXYFILE):
-	$(DOXYGEN) -g
-	sed -i 's/^EXTRACT_ALL\([ \t]*=[ \t]*\).*/EXTRACT_ALL\1YES/g' $@
-	sed -i 's/^EXTRACT_PRIVATE\([ \t]*=[ \t]*\).*/EXTRACT_PRIVATE\1YES/g' $@
-	sed -i 's/^EXTRACT_STATIC\([ \t]*=[ \t]*\).*/EXTRACT_STATIC\1YES/g' $@
-	sed -i 's/^GENERATE_LATEX\([ \t]*=[ \t]*\).*/GENERATE_LATEX\1NO/g' $@
+$(DOXYFILE): Graph.h
+	$(DOXYGEN) $@
