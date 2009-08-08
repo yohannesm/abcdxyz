@@ -22,5 +22,5 @@ clean:
 distclean: clean
 	rm -f $(DOXYFILE)
 
-$(DOXYFILE): Graph.h
-	$(DOXYGEN) $@
+#$(DOXYFILE): Graph.h
+#	$(DOXYGEN) $@
