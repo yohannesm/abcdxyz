@@ -88,12 +88,18 @@ namespace cs {
       const Graph* thegraph;
       vertex_iterator vpos;
       std::set<vertex_descriptor>::iterator epos;
+      std::set<vertex_descriptor> empty_set; // if the graph is empty 
+      // we need a dummy empty set
     public:
-      edge_iterator(const Graph* g, start_tag) : thegraph(g), vpos(vertex_iterator(0)),
-				       epos(thegraph->g[*vpos].begin()) {}
+      edge_iterator(const Graph* g, start_tag) : thegraph(g), vpos(vertex_iterator(0)){
+	if(!( thegraph->g.empty()) ) epos = thegraph->g[*vpos].begin();
+	else epos = empty_set.begin();
+      }
       edge_iterator(const Graph* g, end_tag) : thegraph(g),
-				     vpos(vertex_iterator(thegraph->g.size() - 1)),
-				     epos(thegraph->g[*vpos].end()) {}
+			     vpos(vertex_iterator(thegraph->g.size() - 1)){     
+	if(!( thegraph->g.empty()) ) epos = thegraph->g[*vpos].end();
+	else epos = empty_set.end();
+      }
       edge_iterator operator ++ () {
 	if(epos == thegraph->g[*vpos].end()) {
 	  vpos++;
@@ -122,7 +128,7 @@ namespace cs {
 	  return epos != rhs.epos || vpos != rhs.vpos ||
 		 thegraph != rhs.thegraph;
       }
-    };
+    }; // end edge iterator
       
     // --------
     // add_edge
@@ -132,10 +138,9 @@ namespace cs {
      * <your documentation>
      */
     friend std::pair<edge_descriptor, bool>
-    add_edge (vertex_descriptor, vertex_descriptor, Graph&) {
-      // <your code>
-      edge_descriptor ed;
-      bool            b;
+    add_edge (vertex_descriptor x, vertex_descriptor y, Graph& myG) {
+      bool            b = myG.g[x].insert(y).second;
+      edge_descriptor ed(x,y);// = std::make_pair(a,b);
       return std::make_pair(ed, b);
     }
 
@@ -147,11 +152,9 @@ namespace cs {
      * <your documentation>
      */
     friend vertex_descriptor
-    add_vertex (Graph&) {
-      // <your code>
-
-      vertex_descriptor v;
-      return v;
+    add_vertex (Graph& myG) {
+      myG.g.push_back( std::set<vertex_descriptor>() );
+      return myG.ind++;
     }
         
     // -----------------
@@ -162,10 +165,9 @@ namespace cs {
      * <your documentation>
      */
     friend std::pair<adjacency_iterator, adjacency_iterator>
-    adjacent_vertices (vertex_descriptor, const Graph&) {
-      // <your code>
-      adjacency_iterator b;
-      adjacency_iterator e;
+    adjacent_vertices (vertex_descriptor x, const Graph& myG) {
+      adjacency_iterator b = myG.g[x].begin();
+      adjacency_iterator e = myG.g[x].end();
       return std::make_pair(b, e);
     }
 
@@ -177,10 +179,10 @@ namespace cs {
      * <your documentation>
      */
     friend std::pair<edge_descriptor, bool>
-    edge (vertex_descriptor, vertex_descriptor, const Graph&) {
-      // <your code>
-      edge_descriptor ed;
-      bool            b;
+    edge (vertex_descriptor x, vertex_descriptor y, const Graph& myG) {
+      assert(x < (myG.ind - 1));
+      bool            b = myG.g[x].count(y);
+      edge_descriptor ed(x, y);
       return std::make_pair(ed, b);
     }
 
@@ -208,10 +210,9 @@ namespace cs {
      * <your documentation>
      */
     friend vertex_descriptor
-    vertex (vertices_size_type, const Graph&) {
-      // <your code>
-      vertex_descriptor vd;
-      return vd;
+    vertex (vertices_size_type n, const Graph& myG) {
+      assert(n < (myG.ind - 1));
+      return static_cast<vertex_descriptor>(n);
     }
 
     // --------
@@ -223,7 +224,6 @@ namespace cs {
      */
     friend std::pair<vertex_iterator, vertex_iterator>
     vertices (const Graph& mygraph) {
-      // <your code>
       vertex_iterator b(0);
       vertex_iterator e(mygraph.g.size() - 1);
       return std::make_pair(b, e);
@@ -237,10 +237,9 @@ namespace cs {
      * <your documentation>
      */
     friend vertex_descriptor
-    source (edge_descriptor, const Graph&) {
-      // <your code>
-      vertex_descriptor v;
-      return v;
+    source (edge_descriptor x, const Graph& myG) {
+      assert(x.first < myG.g.size() );
+      return x.first;
     }
 
     // ------
@@ -251,10 +250,8 @@ namespace cs {
      * <your documentation>
      */
     friend vertex_descriptor
-    target (edge_descriptor, const Graph&) {
-      // <your code>
-      vertex_descriptor v;
-      return v;
+    target (edge_descriptor x, const Graph& myG) {
+      return x.second;
     }
 
     // ---------
@@ -265,10 +262,12 @@ namespace cs {
      * <your documentation>
      */
     friend edges_size_type
-    num_edges (const Graph&) {
-      // <your code>
-      edges_size_type s;
-      return s;
+    num_edges (const Graph& myG) {
+      edges_size_type num;
+      for(unsigned int i=0; i< myG.g.size(); ++i){
+         num += myG.g[i].size();
+      }
+      return num;
     }
 
     // ------------
@@ -279,10 +278,8 @@ namespace cs {
      * <your documentation>
      */
     friend vertices_size_type
-    num_vertices (const Graph&) {
-      // <your code>
-      vertices_size_type s;
-      return s;
+    num_vertices (const Graph& myG) {
+     return  static_cast<vertices_size_type>(myG.g.size());
     }
 
   private:
@@ -292,7 +289,7 @@ namespace cs {
 
     friend class edge_iterator;    
     std::vector< std::set<vertex_descriptor> > g;
-
+    vertex_descriptor ind;
     // -----
     // valid
     // -----
@@ -314,7 +311,7 @@ namespace cs {
      * <your documentation>
      */
     Graph () {
-      // <your code>
+      ind = 0;
       assert(valid());
     }
 
