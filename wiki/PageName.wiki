@@ -10,10 +10,14 @@ We are going to reverse engineer part of the boost graph library for a school pr
 We are going to mimic a representation of a directed graph using adjacency list. We are using an std::vector of std::set to represent our graph. 
 
 meta information provided by our CS::class
-  # vertex_descriptor
-  # edge_descriptor
-  # vertex_iterator
+  # vertex_descriptor = describing a vertex inside the graph
+  # edge_descriptor = describing and edge between 2 vertices
+  # vertex_iterator 
   # edge_iterator
   # adjacency_iterator
   # vertices_size_type
   # edges_size_type
+
+we have an add_edge function to add an edge between 2 vertices. but we can't remove an edge between 2 vertices. 
+
+The graph that will be represented is assumed to be sparse because on how we are using an adjacency list to represent it. The graph also will be directed an we don't allow a multigraph representation using our class. 
