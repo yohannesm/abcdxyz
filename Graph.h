@@ -36,7 +36,7 @@ namespace cs {
 
     typedef unsigned int vertex_descriptor;
     typedef std::pair<vertex_descriptor, vertex_descriptor>
-            edge_descriptor;
+    edge_descriptor;
     
     typedef std::set<vertex_descriptor>::iterator adjacency_iterator;
 
@@ -91,12 +91,12 @@ namespace cs {
       std::set<vertex_descriptor> empty_set; // if the graph is empty 
       // we need a dummy empty set
     public:
-      edge_iterator(const Graph* g, start_tag) : thegraph(g), vpos(vertex_iterator(0)){
+      edge_iterator(const Graph* g, start_tag) : thegraph(g), vpos(vertex_iterator(0)) {
 	if(!( thegraph->g.empty()) ) epos = thegraph->g[*vpos].begin();
 	else epos = empty_set.begin();
       }
       edge_iterator(const Graph* g, end_tag) : thegraph(g),
-			     vpos(vertex_iterator(thegraph->g.size() - 1)){     
+					       vpos(vertex_iterator(thegraph->g.size() - 1)) {     
 	if(!( thegraph->g.empty()) ) epos = thegraph->g[*vpos].end();
 	else epos = empty_set.end();
       }
@@ -126,7 +126,7 @@ namespace cs {
 	  return false;
 	else
 	  return epos != rhs.epos || vpos != rhs.vpos ||
-		 thegraph != rhs.thegraph;
+	    thegraph != rhs.thegraph;
       }
     }; // end edge iterator
       
@@ -264,8 +264,8 @@ namespace cs {
     friend edges_size_type
     num_edges (const Graph& myG) {
       edges_size_type num;
-      for(unsigned int i=0; i< myG.g.size(); ++i){
-         num += myG.g[i].size();
+      for(unsigned int i=0; i< myG.g.size(); ++i) {
+	num += myG.g[i].size();
       }
       return num;
     }
@@ -279,7 +279,7 @@ namespace cs {
      */
     friend vertices_size_type
     num_vertices (const Graph& myG) {
-     return  static_cast<vertices_size_type>(myG.g.size());
+      return  static_cast<vertices_size_type>(myG.g.size());
     }
 
   private:
