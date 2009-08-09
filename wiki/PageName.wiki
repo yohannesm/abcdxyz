@@ -10,10 +10,10 @@ We are going to reverse engineer part of the boost graph library for a school pr
 We are going to mimic a representation of a directed graph using adjacency list. We are using an std::vector of std::set to represent our graph. 
 
 meta information provided by our CS::class
-# vertex_descriptor
-# edge_descriptor
-# vertex_iterator
-# edge_iterator
-# adjacency_iterator
-# vertices_size_type
-# edges_size_type
+  # vertex_descriptor
+  # edge_descriptor
+  # vertex_iterator
+  # edge_iterator
+  # adjacency_iterator
+  # vertices_size_type
+  # edges_size_type
