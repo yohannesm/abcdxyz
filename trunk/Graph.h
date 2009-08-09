@@ -102,10 +102,12 @@ namespace cs {
       std::set<vertex_descriptor> empty_set; // if the graph is empty 
       // we need a dummy empty set
     public:
+     //constructor for begin() of all the edges
       edge_iterator(const Graph* g, start_tag) : thegraph(g), vpos(vertex_iterator(0)) {
 	if(!( thegraph->g.empty()) ) epos = thegraph->g[*vpos].begin();
 	else epos = empty_set.begin();
       }
+     //constructor for end() of all the edges
       edge_iterator(const Graph* g, end_tag) : thegraph(g),
 					       vpos(vertex_iterator(thegraph->g.size() - 1)) {     
 	if(!( thegraph->g.empty()) ) epos = thegraph->g[*vpos].end();
@@ -146,7 +148,12 @@ namespace cs {
     // --------
 
     /**
-     * <your documentation>
+     * time:O(1)
+     * space: O(1)
+     * adding a new edge between 2 vertices inside the graph
+     * @return std::pair<edge_descriptor, bool>
+     * bool = false, if the edge already exist inside the graph
+     * will return the edge description of 2 vertices
      */
     friend std::pair<edge_descriptor, bool>
     add_edge (vertex_descriptor x, vertex_descriptor y, Graph& myG) {
@@ -160,7 +167,10 @@ namespace cs {
     // ----------
         
     /**
-     * <your documentation>
+     * time:O(1) amortized
+     * space: adding 1 item, O(1)
+     * adding a new vertex inside the graph
+     * @return the new description of the vertex that was added to the graph
      */
     friend vertex_descriptor
     add_vertex (Graph& myG) {
@@ -173,7 +183,12 @@ namespace cs {
     // -----------------
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * returning all the adjacent vertices of a vertex inside 
+     * a graph
+     * @return pair of adjacency iterator marking the beginning and the end
+     * of all the adjacent vertices
      */
     friend std::pair<adjacency_iterator, adjacency_iterator>
     adjacent_vertices (vertex_descriptor x, const Graph& myG) {
@@ -187,7 +202,9 @@ namespace cs {
     // ----
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * checking whether there is an edge between 2 vertices.
      */
     friend std::pair<edge_descriptor, bool>
     edge (vertex_descriptor x, vertex_descriptor y, const Graph& myG) {
@@ -204,7 +221,7 @@ namespace cs {
     /**
      * O(1) in space
      * O(1) in time
-     * <your documentation>
+     * @return, a pair of iterator to traverse through all the edges inside a graph
      */
     friend std::pair<edge_iterator, edge_iterator>
     edges (const Graph& mygraph) {
@@ -218,7 +235,10 @@ namespace cs {
     // ------
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * @param the order of the vertex according to the insertion time, the specific graph
+     * @return the vertex which was inserted according to the insertion time
      */
     friend vertex_descriptor
     vertex (vertices_size_type n, const Graph& myG) {
@@ -231,7 +251,10 @@ namespace cs {
     // --------
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * @return a pair of vertex iterator to iterates through all the vertices inside
+     * a specific graph
      */
     friend std::pair<vertex_iterator, vertex_iterator>
     vertices (const Graph& mygraph) {
@@ -245,7 +268,9 @@ namespace cs {
     // ------
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * returning the source vertex of an edge inside a graph
      */
     friend vertex_descriptor
     source (edge_descriptor x, const Graph& myG) {
@@ -258,7 +283,9 @@ namespace cs {
     // ------
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * returning the target vertex of an edge inside a graph
      */
     friend vertex_descriptor
     target (edge_descriptor x, const Graph& myG) {
@@ -270,7 +297,9 @@ namespace cs {
     // ---------
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * @return number of all the edges of  a graph
      */
     friend edges_size_type
     num_edges (const Graph& myG) {
@@ -286,7 +315,9 @@ namespace cs {
     // ------------
         
     /**
-     * <your documentation>
+     * time:O(1) 
+     * space:  O(1)
+     * @return number of all the vertices of  a graph
      */
     friend vertices_size_type
     num_vertices (const Graph& myG) {
@@ -298,19 +329,19 @@ namespace cs {
     // data
     // ----
 
-    friend class edge_iterator;    
+    friend class edge_iterator;    //gives edge iterator access to this class 
+    				   // private data
     std::vector< std::set<vertex_descriptor> > g;
-    vertex_descriptor ind;
+    vertex_descriptor ind; //the end index of a graph
     // -----
     // valid
     // -----
 
-    /**
+    /**FIXME: what should we do here?
      * <your documentation>
      */
     bool valid () const {
-      // <your code>
-      return true;
+      return ind == g.size();
     }
 
   public:
@@ -322,6 +353,7 @@ namespace cs {
      * <your documentation>
      */
     Graph () {
+      // let the default vector of set constructor to run
       ind = 0;
       assert(valid());
     }
