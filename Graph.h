@@ -50,7 +50,9 @@ namespace cs {
     // ---------
 
     /**
-     * <your documentation>
+     * a simple class to iterate through vertex
+     * because we have a vector of set, we need a separate iterator for the 
+     * index which represent the vertex
      */
     class vertex_iterator {
     private:
@@ -80,8 +82,17 @@ namespace cs {
       }
     };
 
+    /*
+     *a helper struct to call the edge_iterator constructor for beginning and the end
+     */
+
     struct end_tag {};
     struct start_tag {};
+
+    /*
+     *inner class to iterate through all the edges inside the graph class
+     *
+     */
 
     class edge_iterator {
     private:

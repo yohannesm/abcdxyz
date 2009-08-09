@@ -26,7 +26,8 @@ namespace cs {
   /**
    * depth-first traversal
    * three colors
-   * <your documentation>
+   * looking for a cycle inside a graph
+   * @return true if the graph has a cycle, false otherwise
    */
   enum colors {white, grey, black};
   template <typename G>
@@ -59,7 +60,7 @@ namespace cs {
   /**
    * depth-first traversal
    * two colors
-   * <your documentation>
+   * printing a topological ordering of a graph
    * Precondition: !has_cycle(g)
    */
   template <typename G, typename OI>
