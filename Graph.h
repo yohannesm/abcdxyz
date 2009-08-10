@@ -142,7 +142,22 @@ namespace cs {
 	    thegraph != rhs.thegraph;
       }
     }; // end edge iterator
-      
+
+    // -----------
+    // remove_adge
+    // -----------
+
+    /**
+     * Removes the edge between u and v
+     * @param u The start edge
+     * @param v The end edge
+     * @param myG the graph
+     */
+    friend void remove_edge
+    (vertex_descriptor u, vertex_descriptor v, Graph& myG) {
+      myG.g[u].erase(v);
+    }
+
     // --------
     // add_edge
     // --------
@@ -242,7 +257,7 @@ namespace cs {
      */
     friend vertex_descriptor
     vertex (vertices_size_type n, const Graph& myG) {
-      assert(n < (myG.ind - 1));
+      assert(n < myG.g.size());
       return static_cast<vertex_descriptor>(n);
     }
 
@@ -303,8 +318,8 @@ namespace cs {
      */
     friend edges_size_type
     num_edges (const Graph& myG) {
-      edges_size_type num;
-      for(unsigned int i=0; i< myG.g.size(); ++i) {
+      edges_size_type num = 0;
+      for(unsigned int i = 0; i< myG.g.size(); ++i) {
 	num += myG.g[i].size();
       }
       return num;
@@ -321,7 +336,7 @@ namespace cs {
      */
     friend vertices_size_type
     num_vertices (const Graph& myG) {
-      return  static_cast<vertices_size_type>(myG.g.size());
+      return static_cast<vertices_size_type>(myG.g.size());
     }
 
   private:
@@ -337,8 +352,8 @@ namespace cs {
     // valid
     // -----
 
-    /**FIXME: what should we do here?
-     * <your documentation>
+    /**
+     * Index always has to be equal to the vector's size
      */
     bool valid () const {
       return ind == g.size();
@@ -350,7 +365,7 @@ namespace cs {
     // ------------
 
     /**
-     * <your documentation>
+     * Default constructor
      */
     Graph () {
       // let the default vector of set constructor to run
