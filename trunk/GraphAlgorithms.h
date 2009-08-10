@@ -64,14 +64,43 @@ namespace cs {
    * Precondition: !has_cycle(g)
    */
   template <typename G, typename OI>
-  void topological_sort (const G& g, OI x) {
-    *x = 2;
-    ++x;
-    *x = 0;
-    ++x;
-    *x = 1;
+  void topological_sort (const G& myG, OI x) {
+    assert(!has_cycle(myG));
+    std::vector<colors> vc(num_vertices(myG), white);
+    typedef typename G::vertex_iterator vertit;
+    std::pair<vertit, vertit> p = vertices(myG);
+    vertit b = p.first;
+    vertit e = p.second;
+
+    while(b != e){
+      topological_sort_helper(vc, *b, x, myG);
+      ++b;
+    }
   }
 
+  template <typename G, typename OI>
+  void topological_sort_helper(std::vector<colors>& visited,
+			       const typename G::vertex_descriptor& vd,
+			       OI x, const G& myG) {
+    typedef typename G::adjacency_iterator adjit;
+    std::pair<adjit, adjit> p = adjacent_vertices(vd, myG);
+    adjit b = p.first;
+    adjit e = p.second;
+
+    if(visited[vd] == black)
+      return;
+    if(e == b) {
+      visited[vd] = black;
+      *x = vd; ++x;
+      return;
+    }
+    while(b != e) {
+      topological_sort_helper(visited, *b, x, myG);
+      ++b;
+    }      
+    visited[vd] = black;
+    *x = vd; ++x;
+  }
 } // cs
 
 #endif // GraphAlgorithms_h

@@ -104,36 +104,146 @@ struct TestGraph : CppUnit::TestFixture {
   // test_add_edge
   // -------------
 
-  void test_add_edge () {
+  void test_add_edge1() {
     std::pair<edge_descriptor, bool> p = add_edge(vdA, vdB, g);
     CPPUNIT_ASSERT(p.first  == edAB);
     CPPUNIT_ASSERT(p.second == false);
+  }
+
+  void test_add_edge2() {
+    std::pair<edge_descriptor, bool> p = add_edge(vdE, vdG, g);
+    adjacency_iterator b = adjacent_vertices(vdE, g).first;
+    adjacency_iterator e = adjacent_vertices(vdE, g).second;
+    CPPUNIT_ASSERT(std::distance(b, e) == 1);
+    CPPUNIT_ASSERT(*b == vdG);
+    CPPUNIT_ASSERT(p.second == true);
+    remove_edge(vdE, vdG, g);
   }
 
   // -----------
   // test_vertex
   // -----------
 
-  void test_vertex () {
+  void test_vertex1() {
     vertex_descriptor vd = vertex(0, g);
     CPPUNIT_ASSERT(vd == vdA);
+  }
+
+  void test_vertex2() {
+    vertex_descriptor vd = vertex(1, g);
+    CPPUNIT_ASSERT(vd == vdB);
+  }
+
+  void test_vertex3() {
+    vertex_descriptor vd = vertex(2, g);
+    CPPUNIT_ASSERT(vd == vdC);
+  }
+
+  void test_vertex4() {
+    vertex_descriptor vd = vertex(3, g);
+    CPPUNIT_ASSERT(vd == vdD);
+  }
+
+  void test_vertex5() {
+    vertex_descriptor vd = vertex(4, g);
+    CPPUNIT_ASSERT(vd == vdE);
+  }
+
+  void test_vertex6() {
+    vertex_descriptor vd = vertex(5, g);
+    CPPUNIT_ASSERT(vd == vdF);
+  }
+
+  void test_vertex7() {
+    vertex_descriptor vd = vertex(6, g);
+    CPPUNIT_ASSERT(vd == vdG);
+  }
+
+  void test_vertex8() {
+    vertex_descriptor vd = vertex(7, g);
+    CPPUNIT_ASSERT(vd == vdH);
   }
 
   // ---------
   // test_edge
   // ---------
 
-  void test_edge () {
+  void test_edge1() {
     std::pair<edge_descriptor, bool> p = edge(vdA, vdB, g);
     CPPUNIT_ASSERT(p.first  == edAB);
     CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge2() {
+    std::pair<edge_descriptor, bool> p = edge(vdA, vdC, g);
+    CPPUNIT_ASSERT(p.first  == edAC);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge3() {
+    std::pair<edge_descriptor, bool> p = edge(vdA, vdE, g);
+    CPPUNIT_ASSERT(p.first  == edAE);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge4() {
+    std::pair<edge_descriptor, bool> p = edge(vdB, vdD, g);
+    CPPUNIT_ASSERT(p.first  == edBD);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge5() {
+    std::pair<edge_descriptor, bool> p = edge(vdB, vdE, g);
+    CPPUNIT_ASSERT(p.first  == edBE);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge6() {
+    std::pair<edge_descriptor, bool> p = edge(vdC, vdD, g);
+    CPPUNIT_ASSERT(p.first  == edCD);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge7() {
+    std::pair<edge_descriptor, bool> p = edge(vdD, vdE, g);
+    CPPUNIT_ASSERT(p.first  == edDE);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge8() {
+    std::pair<edge_descriptor, bool> p = edge(vdD, vdF, g);
+    CPPUNIT_ASSERT(p.first  == edDF);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge9() {
+    std::pair<edge_descriptor, bool> p = edge(vdF, vdD, g);
+    CPPUNIT_ASSERT(p.first  == edFD);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge10() {
+    std::pair<edge_descriptor, bool> p = edge(vdF, vdH, g);
+    CPPUNIT_ASSERT(p.first  == edFH);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge11() {
+    std::pair<edge_descriptor, bool> p = edge(vdG, vdH, g);
+    CPPUNIT_ASSERT(p.first  == edGH);
+    CPPUNIT_ASSERT(p.second == true);
+  }
+
+  void test_edge12() {
+    std::pair<edge_descriptor, bool> p = edge(vdD, vdG, g);
+    CPPUNIT_ASSERT(p.second == false);
   }
 
   // -----------------
   // test_num_vertices
   // -----------------
 
-  void test_num_vertices () {
+  void test_num_vertices() {
     vertices_size_type vs = num_vertices(g);
     CPPUNIT_ASSERT(vs == 8);
   }
@@ -142,7 +252,7 @@ struct TestGraph : CppUnit::TestFixture {
   // test_num_edges
   // --------------
 
-  void test_num_edges () {
+  void test_num_edges() {
     edges_size_type es = num_edges(g);
     CPPUNIT_ASSERT(es == 11);
   }
@@ -151,19 +261,120 @@ struct TestGraph : CppUnit::TestFixture {
   // test_source
   // -----------
 
-  void test_source () {
+  void test_source1() {
     vertex_descriptor vd = source(edAB, g);
     CPPUNIT_ASSERT(vd == vdA);
+  }
+
+  void test_source2() {
+    vertex_descriptor vd = source(edAC, g);
+    CPPUNIT_ASSERT(vd == vdA);
+  }
+
+  void test_source3() {
+    vertex_descriptor vd = source(edAE, g);
+    CPPUNIT_ASSERT(vd == vdA);
+  }
+
+  void test_source4() {
+    vertex_descriptor vd = source(edBD, g);
+    CPPUNIT_ASSERT(vd == vdB);
+  }
+
+  void test_source5() {
+    vertex_descriptor vd = source(edBE, g);
+    CPPUNIT_ASSERT(vd == vdB);
+  }
+
+  void test_source6() {
+    vertex_descriptor vd = source(edCD, g);
+    CPPUNIT_ASSERT(vd == vdC);
+  }
+
+  void test_source7() {
+    vertex_descriptor vd = source(edDE, g);
+    CPPUNIT_ASSERT(vd == vdD);
+  }
+
+  void test_source8() {
+    vertex_descriptor vd = source(edDF, g);
+    CPPUNIT_ASSERT(vd == vdD);
+  }
+
+  void test_source9() {
+    vertex_descriptor vd = source(edFD, g);
+    CPPUNIT_ASSERT(vd == vdF);
+  }
+
+  void test_source10() {
+    vertex_descriptor vd = source(edFH, g);
+    CPPUNIT_ASSERT(vd == vdF);
+  }
+
+  void test_source11() {
+    vertex_descriptor vd = source(edGH, g);
+    CPPUNIT_ASSERT(vd == vdG);
   }
 
   // -----------
   // test_target
   // -----------
 
-  void test_target () {
+  void test_target1() {
     vertex_descriptor vd = target(edAB, g);
     CPPUNIT_ASSERT(vd == vdB);
   }
+
+  void test_target2() {
+    vertex_descriptor vd = target(edAC, g);
+    CPPUNIT_ASSERT(vd == vdC);
+  }
+
+  void test_target3() {
+    vertex_descriptor vd = target(edAE, g);
+    CPPUNIT_ASSERT(vd == vdE);
+  }
+
+  void test_target4() {
+    vertex_descriptor vd = target(edBD, g);
+    CPPUNIT_ASSERT(vd == vdD);
+  }
+
+  void test_target5() {
+    vertex_descriptor vd = target(edBE, g);
+    CPPUNIT_ASSERT(vd == vdE);
+  }
+
+  void test_target6() {
+    vertex_descriptor vd = target(edCD, g);
+    CPPUNIT_ASSERT(vd == vdD);
+  }
+
+  void test_target7() {
+    vertex_descriptor vd = target(edDE, g);
+    CPPUNIT_ASSERT(vd == vdE);
+  }
+
+  void test_target8() {
+    vertex_descriptor vd = target(edDF, g);
+    CPPUNIT_ASSERT(vd == vdF);
+  }
+
+  void test_target9() {
+    vertex_descriptor vd = target(edFD, g);
+    CPPUNIT_ASSERT(vd == vdD);
+  }
+
+  void test_target10() {
+    vertex_descriptor vd = target(edFH, g);
+    CPPUNIT_ASSERT(vd == vdH);
+  }
+
+  void test_target11() {
+    vertex_descriptor vd = target(edGH, g);
+    CPPUNIT_ASSERT(vd == vdH);
+  }
+
 
   // -------------
   // test_vertices
@@ -218,8 +429,14 @@ struct TestGraph : CppUnit::TestFixture {
   // test_has_cycle
   // --------------
 
-  void test_has_cycle () {
+  void test_has_cycle1() {
     CPPUNIT_ASSERT(cs::has_cycle(g));
+  }
+
+  void test_has_cycle2() {
+    remove_edge(vdD, vdF, g);
+    CPPUNIT_ASSERT(!cs::has_cycle(g));
+    edDF = add_edge(vdD, vdF, g).first;
   }
 
   // ---------------------
@@ -228,8 +445,10 @@ struct TestGraph : CppUnit::TestFixture {
 
   void test_topological_sort () {
     std::ostringstream out;
+    remove_edge(vdD, vdF, g);
     cs::topological_sort(g, std::ostream_iterator<vertex_descriptor>(out, " "));
-    CPPUNIT_ASSERT(out.str() == "2 0 1 ");
+    CPPUNIT_ASSERT(out.str() == "4 3 1 2 0 7 5 6 ");
+    edDF = add_edge(vdD, vdF, g).first;
   }
 
   // -----
@@ -237,17 +456,57 @@ struct TestGraph : CppUnit::TestFixture {
   // -----
 
   CPPUNIT_TEST_SUITE(TestGraph);
-  CPPUNIT_TEST(test_add_edge);
-  CPPUNIT_TEST(test_vertex);
-  CPPUNIT_TEST(test_edge);
+  CPPUNIT_TEST(test_add_edge1);
+  CPPUNIT_TEST(test_add_edge2);
+  CPPUNIT_TEST(test_vertex1);
+  CPPUNIT_TEST(test_vertex2);
+  CPPUNIT_TEST(test_vertex3);
+  CPPUNIT_TEST(test_vertex4);
+  CPPUNIT_TEST(test_vertex5);
+  CPPUNIT_TEST(test_vertex6);
+  CPPUNIT_TEST(test_vertex7);
+  CPPUNIT_TEST(test_vertex8);
+  CPPUNIT_TEST(test_edge1);
+  CPPUNIT_TEST(test_edge2);
+  CPPUNIT_TEST(test_edge3);
+  CPPUNIT_TEST(test_edge4);
+  CPPUNIT_TEST(test_edge5);
+  CPPUNIT_TEST(test_edge6);
+  CPPUNIT_TEST(test_edge7);
+  CPPUNIT_TEST(test_edge8);
+  CPPUNIT_TEST(test_edge9);
+  CPPUNIT_TEST(test_edge10);
+  CPPUNIT_TEST(test_edge11);
+  CPPUNIT_TEST(test_edge12);
   CPPUNIT_TEST(test_num_vertices);
   CPPUNIT_TEST(test_num_edges);
-  CPPUNIT_TEST(test_source);
-  CPPUNIT_TEST(test_target);
+  CPPUNIT_TEST(test_source1);
+  CPPUNIT_TEST(test_source2);
+  CPPUNIT_TEST(test_source3);
+  CPPUNIT_TEST(test_source4);
+  CPPUNIT_TEST(test_source5);
+  CPPUNIT_TEST(test_source6);
+  CPPUNIT_TEST(test_source7);
+  CPPUNIT_TEST(test_source8);
+  CPPUNIT_TEST(test_source9);
+  CPPUNIT_TEST(test_source10);
+  CPPUNIT_TEST(test_source11);
+  CPPUNIT_TEST(test_target1);
+  CPPUNIT_TEST(test_target2);
+  CPPUNIT_TEST(test_target3);
+  CPPUNIT_TEST(test_target4);
+  CPPUNIT_TEST(test_target5);
+  CPPUNIT_TEST(test_target6);
+  CPPUNIT_TEST(test_target7);
+  CPPUNIT_TEST(test_target8);
+  CPPUNIT_TEST(test_target9);
+  CPPUNIT_TEST(test_target10);
+  CPPUNIT_TEST(test_target11);
   CPPUNIT_TEST(test_vertices);
   CPPUNIT_TEST(test_edges);
   CPPUNIT_TEST(test_adjacent_vertices);
-  CPPUNIT_TEST(test_has_cycle);
+  CPPUNIT_TEST(test_has_cycle1);
+  CPPUNIT_TEST(test_has_cycle2);
   CPPUNIT_TEST(test_topological_sort);
   CPPUNIT_TEST_SUITE_END();
 };

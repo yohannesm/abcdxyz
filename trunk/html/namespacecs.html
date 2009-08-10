@@ -25,9 +25,26 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html">Graph</a></td></tr>
 
 <tr><td colspan="2"><br><h2>Enumerations</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d">colors</a> { <a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884">white</a>, 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d">colors</a> { <br>
+&nbsp;&nbsp;<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884">white</a>, 
+<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884">white</a>, 
 <a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765">grey</a>, 
+<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765">grey</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93">black</a>, 
 <a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93">black</a>
+<br>
+ }</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d">colors</a> { <br>
+&nbsp;&nbsp;<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884">white</a>, 
+<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884">white</a>, 
+<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765">grey</a>, 
+<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765">grey</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93">black</a>, 
+<a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93">black</a>
+<br>
  }</td></tr>
 
 <tr><td colspan="2"><br><h2>Functions</h2></td></tr>
@@ -38,7 +55,10 @@
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecs.html#6e77342795aba1620701bcf4eb3ed2e2">has_cycle_helper</a> (std::vector&lt; <a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d">colors</a> &gt; &amp;visited, const typename G::vertex_descriptor &amp;vd, const G &amp;myG)</td></tr>
 
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;typename G, typename OI&gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecs.html#1fee97a227e339800b6d3f9f916c47c8">topological_sort</a> (const G &amp;g, OI x)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecs.html#b38c0b4eeaee9eec78591555c43c11e9">topological_sort</a> (const G &amp;myG, OI x)</td></tr>
+
+<tr><td class="memTemplParams" nowrap colspan="2">template&lt;typename G, typename OI&gt; </td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecs.html#93138491e8943b379f3e454f693411c6">topological_sort_helper</a> (std::vector&lt; <a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d">colors</a> &gt; &amp;visited, const typename G::vertex_descriptor &amp;vd, OI x, const G &amp;myG)</td></tr>
 
 </table>
 <hr><h2>Enumeration Type Documentation</h2>
@@ -59,7 +79,45 @@ depth-first traversal three colors looking for a cycle inside a graph <dl compac
 <table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884"></a><!-- doxytag: member="white" ref="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884" args="" -->white</em>&nbsp;</td><td>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884"></a><!-- doxytag: member="white" ref="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884" args="" -->white</em>&nbsp;</td><td>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765"></a><!-- doxytag: member="grey" ref="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765" args="" -->grey</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765"></a><!-- doxytag: member="grey" ref="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765" args="" -->grey</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93"></a><!-- doxytag: member="black" ref="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93" args="" -->black</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93"></a><!-- doxytag: member="black" ref="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93" args="" -->black</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d"></a><!-- doxytag: member="cs::colors" ref="34729e78c1b65a4240688ee5dc4e703d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d">cs::colors</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+depth-first traversal three colors looking for a cycle inside a graph <dl compact><dt><b>Returns:</b></dt><dd>true if the graph has a cycle, false otherwise </dd></dl>
+<dl compact><dt><b>Enumerator: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884"></a><!-- doxytag: member="white" ref="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884" args="" -->white</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884"></a><!-- doxytag: member="white" ref="34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884" args="" -->white</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765"></a><!-- doxytag: member="grey" ref="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765" args="" -->grey</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765"></a><!-- doxytag: member="grey" ref="34729e78c1b65a4240688ee5dc4e703de57a566fedfa10480259272ce82a2765" args="" -->grey</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93"></a><!-- doxytag: member="black" ref="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93" args="" -->black</em>&nbsp;</td><td>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" name="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93"></a><!-- doxytag: member="black" ref="34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93" args="" -->black</em>&nbsp;</td><td>
 </td></tr>
@@ -128,7 +186,7 @@ template&lt;typename G&gt; </div>
 
 </div>
 </div><p>
-<a class="anchor" name="1fee97a227e339800b6d3f9f916c47c8"></a><!-- doxytag: member="cs::topological_sort" ref="1fee97a227e339800b6d3f9f916c47c8" args="(const G &amp;g, OI x)" -->
+<a class="anchor" name="b38c0b4eeaee9eec78591555c43c11e9"></a><!-- doxytag: member="cs::topological_sort" ref="b38c0b4eeaee9eec78591555c43c11e9" args="(const G &amp;myG, OI x)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -138,7 +196,7 @@ template&lt;typename G, typename OI&gt; </div>
           <td class="memname">void cs::topological_sort           </td>
           <td>(</td>
           <td class="paramtype">const G &amp;&nbsp;</td>
-          <td class="paramname"> <em>g</em>, </td>
+          <td class="paramname"> <em>myG</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -159,7 +217,50 @@ template&lt;typename G, typename OI&gt; </div>
 depth-first traversal two colors printing a topological ordering of a graph Precondition: !has_cycle(g) 
 </div>
 </div><p>
-<hr size="1"><address style="align: right;"><small>Generated on Sun Aug 9 16:42:57 2009 by&nbsp;
+<a class="anchor" name="93138491e8943b379f3e454f693411c6"></a><!-- doxytag: member="cs::topological_sort_helper" ref="93138491e8943b379f3e454f693411c6" args="(std::vector&lt; colors &gt; &amp;visited, const typename G::vertex_descriptor &amp;vd, OI x, const G &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename G, typename OI&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void cs::topological_sort_helper           </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d">colors</a> &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>visited</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const typename G::vertex_descriptor &amp;&nbsp;</td>
+          <td class="paramname"> <em>vd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OI&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const G &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<hr size="1"><address style="align: right;"><small>Generated on Sun Aug 9 19:08:45 2009 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
 </body>

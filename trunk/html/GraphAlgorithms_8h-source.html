@@ -71,18 +71,47 @@
 <a name="l00058"></a>00058   <span class="comment">// ----------------</span>
 <a name="l00059"></a>00059 
 <a name="l00066"></a>00066   <span class="keyword">template</span> &lt;<span class="keyword">typename</span> G, <span class="keyword">typename</span> OI&gt;
-<a name="l00067"></a><a class="code" href="namespacecs.html#1fee97a227e339800b6d3f9f916c47c8">00067</a>   <span class="keywordtype">void</span> <a class="code" href="namespacecs.html#1fee97a227e339800b6d3f9f916c47c8">topological_sort</a> (<span class="keyword">const</span> G&amp; g, OI x) {
-<a name="l00068"></a>00068     *x = 2;
-<a name="l00069"></a>00069     ++x;
-<a name="l00070"></a>00070     *x = 0;
-<a name="l00071"></a>00071     ++x;
-<a name="l00072"></a>00072     *x = 1;
-<a name="l00073"></a>00073   }
+<a name="l00067"></a><a class="code" href="namespacecs.html#b38c0b4eeaee9eec78591555c43c11e9">00067</a>   <span class="keywordtype">void</span> <a class="code" href="namespacecs.html#b38c0b4eeaee9eec78591555c43c11e9">topological_sort</a> (<span class="keyword">const</span> G&amp; myG, OI x) {
+<a name="l00068"></a>00068     assert(!<a class="code" href="namespacecs.html#6564e512e0279361acfce56f9c020fbe">has_cycle</a>(myG));
+<a name="l00069"></a>00069     std::vector&lt;colors&gt; vc(num_vertices(myG), <a class="code" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d416749512dfffe52476929d7e2fd9884">white</a>);
+<a name="l00070"></a>00070     <span class="keyword">typedef</span> <span class="keyword">typename</span> G::vertex_iterator vertit;
+<a name="l00071"></a>00071     std::pair&lt;vertit, vertit&gt; p = vertices(myG);
+<a name="l00072"></a>00072     vertit b = p.first;
+<a name="l00073"></a>00073     vertit e = p.second;
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075 } <span class="comment">// cs</span>
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077 <span class="preprocessor">#endif // GraphAlgorithms_h</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Sun Aug 9 16:42:57 2009 by&nbsp;
+<a name="l00075"></a>00075     <span class="keywordflow">while</span>(b != e){
+<a name="l00076"></a>00076       <a class="code" href="namespacecs.html#93138491e8943b379f3e454f693411c6">topological_sort_helper</a>(vc, *b, x, myG);
+<a name="l00077"></a>00077       ++b;
+<a name="l00078"></a>00078     }
+<a name="l00079"></a>00079   }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081   <span class="keyword">template</span> &lt;<span class="keyword">typename</span> G, <span class="keyword">typename</span> OI&gt;
+<a name="l00082"></a><a class="code" href="namespacecs.html#93138491e8943b379f3e454f693411c6">00082</a>   <span class="keywordtype">void</span> <a class="code" href="namespacecs.html#93138491e8943b379f3e454f693411c6">topological_sort_helper</a>(std::vector&lt;colors&gt;&amp; visited,
+<a name="l00083"></a>00083                                <span class="keyword">const</span> <span class="keyword">typename</span> G::vertex_descriptor&amp; vd,
+<a name="l00084"></a>00084                                OI x, <span class="keyword">const</span> G&amp; myG) {
+<a name="l00085"></a>00085     <span class="keyword">typedef</span> <span class="keyword">typename</span> G::adjacency_iterator adjit;
+<a name="l00086"></a>00086     std::pair&lt;adjit, adjit&gt; p = adjacent_vertices(vd, myG);
+<a name="l00087"></a>00087     adjit b = p.first;
+<a name="l00088"></a>00088     adjit e = p.second;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keywordflow">if</span>(visited[vd] == <a class="code" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93">black</a>)
+<a name="l00091"></a>00091       <span class="keywordflow">return</span>;
+<a name="l00092"></a>00092     <span class="keywordflow">if</span>(e == b) {
+<a name="l00093"></a>00093       visited[vd] = <a class="code" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93">black</a>;
+<a name="l00094"></a>00094       *x = vd; ++x;
+<a name="l00095"></a>00095       <span class="keywordflow">return</span>;
+<a name="l00096"></a>00096     }
+<a name="l00097"></a>00097     <span class="keywordflow">while</span>(b != e) {
+<a name="l00098"></a>00098       <a class="code" href="namespacecs.html#93138491e8943b379f3e454f693411c6">topological_sort_helper</a>(visited, *b, x, myG);
+<a name="l00099"></a>00099       ++b;
+<a name="l00100"></a>00100     }      
+<a name="l00101"></a>00101     visited[vd] = <a class="code" href="namespacecs.html#34729e78c1b65a4240688ee5dc4e703d59babd894917341723071976f3870f93">black</a>;
+<a name="l00102"></a>00102     *x = vd; ++x;
+<a name="l00103"></a>00103   }
+<a name="l00104"></a>00104 } <span class="comment">// cs</span>
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 <span class="preprocessor">#endif // GraphAlgorithms_h</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Sun Aug 9 19:08:45 2009 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
 </body>
