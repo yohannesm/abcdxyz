@@ -82,18 +82,14 @@ namespace cs {
       }
     };
 
-    /*
-     *a helper struct to call the edge_iterator constructor for beginning and the end
-     */
+    // a helper struct to call the edge_iterator constructor for beginning and the end
 
     struct end_tag {};
     struct start_tag {};
 
-    /*
-     *inner class to iterate through all the edges inside the graph class
-     *
+    /**
+     * inner class to iterate through all the edges inside the graph class
      */
-
     class edge_iterator {
     private:
       const Graph* thegraph;
