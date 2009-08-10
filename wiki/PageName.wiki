@@ -1,15 +1,15 @@
-#Boost Graph Library clone
+#summary Boost Graph Library clone
 
 = Our mimic of Boost Graph library called CS::Graph =
 
-We are going to reverse engineer part of the boost graph library for a school project
+We are going to reverse engineer part of the boost graph library for a school project.
 
 
 = Implementation =
 
 We are going to mimic a representation of a directed graph using adjacency list. We are using an std::vector of std::set to represent our graph. 
 
-meta information provided by our CS::class
+Meta information provided by our CS::class:
   # vertex_descriptor = describing a vertex inside the graph
   # edge_descriptor = describing and edge between 2 vertices
   # vertex_iterator 
@@ -18,6 +18,6 @@ meta information provided by our CS::class
   # vertices_size_type
   # edges_size_type
 
-we have an add_edge function to add an edge between 2 vertices. but we can't remove an edge between 2 vertices. 
+We have an add_edge function to add an edge between 2 vertices.  We added a remove_edge function to temporarily remove edges from the graph so that we can avoid infinite recursion in topological_sort (without breaking the other test cases).
 
-The graph that will be represented is assumed to be sparse because on how we are using an adjacency list to represent it. The graph also will be directed an we don't allow a multigraph representation using our class. 
+The graph that will be represented is assumed to be sparse because on how we are using an adjacency list to represent it. The graph also will be directed an we don't allow a multigraph representation using our class.
