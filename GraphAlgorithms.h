@@ -23,13 +23,14 @@ namespace cs {
   // has_cycle
   // ---------
 
+  enum colors {white, grey, black};
+
   /**
    * depth-first traversal
    * three colors
    * looking for a cycle inside a graph
    * @return true if the graph has a cycle, false otherwise
    */
-  enum colors {white, grey, black};
   template <typename G>
   bool has_cycle (const G& myG) {
     std::vector<colors> vc(num_vertices(myG), white);
