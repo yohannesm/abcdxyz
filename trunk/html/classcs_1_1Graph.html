@@ -21,12 +21,581 @@
 <a class="el" href="namespacecs.html">cs</a>::<a class="el" href="classcs_1_1Graph.html">Graph</a></div>
 <h1>cs::Graph Class Reference</h1><!-- doxytag: class="cs::Graph" --><code>#include &lt;<a class="el" href="Graph_8h-source.html">Graph.h</a>&gt;</code>
 <p>
-<table border="0" cellpadding="0" cellspacing="0">
+<a href="classcs_1_1Graph-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Types</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef std::pair&lt; <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>,<br>
+ <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef std::set&lt; <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> <br>
+&gt;::iterator&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#389b9c95e4feed5b5cb663a0c3f66110">adjacency_iterator</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef std::size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#da2c176f48619603664816e5fa5d3b05">vertices_size_type</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef std::size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#62e83fe7bf41418c0f35ae1303b68612">edges_size_type</a></td></tr>
+
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#c7989c9e755650e504521542c698ad33">Graph</a> ()</td></tr>
+
+<tr><td colspan="2"><br><h2>Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#6176e317498f8adb75e01b22e989db66">valid</a> () const </td></tr>
+
+<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::vector&lt; std::set&lt; <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#7dec658b604cdea3a059c7f73861e7bd">g</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#afe116f1d0bbb4d5bcba22a976d514de">ind</a></td></tr>
+
+<tr><td colspan="2"><br><h2>Friends</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#6fcafde38dd589f0e28aa1d0725b9117">edge_iterator</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#27de1ec29b934e1e8a60ae2afd3b4280">remove_edge</a> (<a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> u, <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> v, <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::pair&lt; <a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a>,<br>
+ bool &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#8e08e2253e71e00a45c630543276cf99">add_edge</a> (<a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> x, <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> y, <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#59d7265b14e601a0a86d159ec2ae514c">add_vertex</a> (<a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::pair&lt; <a class="el" href="classcs_1_1Graph.html#389b9c95e4feed5b5cb663a0c3f66110">adjacency_iterator</a>,<br>
+ <a class="el" href="classcs_1_1Graph.html#389b9c95e4feed5b5cb663a0c3f66110">adjacency_iterator</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#fc08ee84080c75aa5914d92c27bac1a0">adjacent_vertices</a> (<a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> x, const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::pair&lt; <a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a>,<br>
+ bool &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#5cf458c1f8811b4fbad345f20804d15c">edge</a> (<a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> x, <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> y, const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::pair&lt; <a class="el" href="classcs_1_1Graph_1_1edge__iterator.html">edge_iterator</a>,<br>
+ <a class="el" href="classcs_1_1Graph_1_1edge__iterator.html">edge_iterator</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#8f7184d08ac4177387ed4c55b4063c76">edges</a> (const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;mygraph)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#412a319c15f6fd2872214260423dcc5c">vertex</a> (<a class="el" href="classcs_1_1Graph.html#da2c176f48619603664816e5fa5d3b05">vertices_size_type</a> n, const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::pair&lt; <a class="el" href="classcs_1_1Graph_1_1vertex__iterator.html">vertex_iterator</a>,<br>
+ <a class="el" href="classcs_1_1Graph_1_1vertex__iterator.html">vertex_iterator</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#ee65ffc9fac5b7b4cc2a91ab549d45c2">vertices</a> (const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;mygraph)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#601ccac32a2c3ef52f820ea9a643ad4b">source</a> (<a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a> x, const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#6a2a53a92be30b9f35b91ba7d769b7a3">target</a> (<a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a> x, const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classcs_1_1Graph.html#62e83fe7bf41418c0f35ae1303b68612">edges_size_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#520eaf307a2bafd9baa7400cba7a56c3">num_edges</a> (const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classcs_1_1Graph.html#da2c176f48619603664816e5fa5d3b05">vertices_size_type</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph.html#0c8eabd45aacb6ebe9243a90708aeada">num_vertices</a> (const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;myG)</td></tr>
+
+<tr><td colspan="2"><br><h2>Classes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph_1_1edge__iterator.html">edge_iterator</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcs_1_1Graph_1_1end__tag.html">end_tag</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcs_1_1Graph_1_1start__tag.html">start_tag</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcs_1_1Graph_1_1vertex__iterator.html">vertex_iterator</a></td></tr>
+
 </table>
+<hr><h2>Member Typedef Documentation</h2>
+<a class="anchor" name="389b9c95e4feed5b5cb663a0c3f66110"></a><!-- doxytag: member="cs::Graph::adjacency_iterator" ref="389b9c95e4feed5b5cb663a0c3f66110" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::set&lt;<a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&gt;::iterator <a class="el" href="classcs_1_1Graph.html#389b9c95e4feed5b5cb663a0c3f66110">cs::Graph::adjacency_iterator</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="46c68fa65f13bc5ff65eda438dcc7ce1"></a><!-- doxytag: member="cs::Graph::edge_descriptor" ref="46c68fa65f13bc5ff65eda438dcc7ce1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::pair&lt;<a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>, <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&gt; <a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">cs::Graph::edge_descriptor</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="62e83fe7bf41418c0f35ae1303b68612"></a><!-- doxytag: member="cs::Graph::edges_size_type" ref="62e83fe7bf41418c0f35ae1303b68612" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::size_t <a class="el" href="classcs_1_1Graph.html#62e83fe7bf41418c0f35ae1303b68612">cs::Graph::edges_size_type</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="f3b5043a50bb003b52df18c833cbb26c"></a><!-- doxytag: member="cs::Graph::vertex_descriptor" ref="f3b5043a50bb003b52df18c833cbb26c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">cs::Graph::vertex_descriptor</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="da2c176f48619603664816e5fa5d3b05"></a><!-- doxytag: member="cs::Graph::vertices_size_type" ref="da2c176f48619603664816e5fa5d3b05" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::size_t <a class="el" href="classcs_1_1Graph.html#da2c176f48619603664816e5fa5d3b05">cs::Graph::vertices_size_type</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" name="c7989c9e755650e504521542c698ad33"></a><!-- doxytag: member="cs::Graph::Graph" ref="c7989c9e755650e504521542c698ad33" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cs::Graph::Graph           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Default constructor 
+</div>
+</div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="6176e317498f8adb75e01b22e989db66"></a><!-- doxytag: member="cs::Graph::valid" ref="6176e317498f8adb75e01b22e989db66" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cs::Graph::valid           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Index always has to be equal to the vector's size 
+</div>
+</div><p>
+<hr><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" name="8e08e2253e71e00a45c630543276cf99"></a><!-- doxytag: member="cs::Graph::add_edge" ref="8e08e2253e71e00a45c630543276cf99" args="(vertex_descriptor x, vertex_descriptor y, Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a>, bool&gt; add_edge           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) adding a new edge between 2 vertices inside the graph <dl compact><dt><b>Returns:</b></dt><dd>std::pair&lt;edge_descriptor, bool&gt; bool = false, if the edge already exist inside the graph will return the edge description of 2 vertices </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="59d7265b14e601a0a86d159ec2ae514c"></a><!-- doxytag: member="cs::Graph::add_vertex" ref="59d7265b14e601a0a86d159ec2ae514c" args="(Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> add_vertex           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) amortized space: adding 1 item, O(1) adding a new vertex inside the graph <dl compact><dt><b>Returns:</b></dt><dd>the new description of the vertex that was added to the graph </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fc08ee84080c75aa5914d92c27bac1a0"></a><!-- doxytag: member="cs::Graph::adjacent_vertices" ref="fc08ee84080c75aa5914d92c27bac1a0" args="(vertex_descriptor x, const Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classcs_1_1Graph.html#389b9c95e4feed5b5cb663a0c3f66110">adjacency_iterator</a>, <a class="el" href="classcs_1_1Graph.html#389b9c95e4feed5b5cb663a0c3f66110">adjacency_iterator</a>&gt; adjacent_vertices           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) returning all the adjacent vertices of a vertex inside a graph <dl compact><dt><b>Returns:</b></dt><dd>pair of adjacency iterator marking the beginning and the end of all the adjacent vertices </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="5cf458c1f8811b4fbad345f20804d15c"></a><!-- doxytag: member="cs::Graph::edge" ref="5cf458c1f8811b4fbad345f20804d15c" args="(vertex_descriptor x, vertex_descriptor y, const Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a>, bool&gt; edge           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) checking whether there is an edge between 2 vertices. 
+</div>
+</div><p>
+<a class="anchor" name="6fcafde38dd589f0e28aa1d0725b9117"></a><!-- doxytag: member="cs::Graph::edge_iterator" ref="6fcafde38dd589f0e28aa1d0725b9117" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classcs_1_1Graph_1_1edge__iterator.html">edge_iterator</a><code> [friend]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8f7184d08ac4177387ed4c55b4063c76"></a><!-- doxytag: member="cs::Graph::edges" ref="8f7184d08ac4177387ed4c55b4063c76" args="(const Graph &amp;mygraph)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classcs_1_1Graph_1_1edge__iterator.html">edge_iterator</a>, <a class="el" href="classcs_1_1Graph_1_1edge__iterator.html">edge_iterator</a>&gt; edges           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mygraph</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+O(1) in space O(1) in time <dl compact><dt><b>Returns:</b></dt><dd>, a pair of iterator to traverse through all the edges inside a graph </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="520eaf307a2bafd9baa7400cba7a56c3"></a><!-- doxytag: member="cs::Graph::num_edges" ref="520eaf307a2bafd9baa7400cba7a56c3" args="(const Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcs_1_1Graph.html#62e83fe7bf41418c0f35ae1303b68612">edges_size_type</a> num_edges           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) <dl compact><dt><b>Returns:</b></dt><dd>number of all the edges of a graph </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0c8eabd45aacb6ebe9243a90708aeada"></a><!-- doxytag: member="cs::Graph::num_vertices" ref="0c8eabd45aacb6ebe9243a90708aeada" args="(const Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcs_1_1Graph.html#da2c176f48619603664816e5fa5d3b05">vertices_size_type</a> num_vertices           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) <dl compact><dt><b>Returns:</b></dt><dd>number of all the vertices of a graph </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="27de1ec29b934e1e8a60ae2afd3b4280"></a><!-- doxytag: member="cs::Graph::remove_edge" ref="27de1ec29b934e1e8a60ae2afd3b4280" args="(vertex_descriptor u, vertex_descriptor v, Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remove_edge           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Removes the edge between u and v <dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>u</em>&nbsp;</td><td>The start edge </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>v</em>&nbsp;</td><td>The end edge </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>myG</em>&nbsp;</td><td>the graph </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="601ccac32a2c3ef52f820ea9a643ad4b"></a><!-- doxytag: member="cs::Graph::source" ref="601ccac32a2c3ef52f820ea9a643ad4b" args="(edge_descriptor x, const Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> source           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) returning the source vertex of an edge inside a graph 
+</div>
+</div><p>
+<a class="anchor" name="6a2a53a92be30b9f35b91ba7d769b7a3"></a><!-- doxytag: member="cs::Graph::target" ref="6a2a53a92be30b9f35b91ba7d769b7a3" args="(edge_descriptor x, const Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> target           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#46c68fa65f13bc5ff65eda438dcc7ce1">edge_descriptor</a>&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) returning the target vertex of an edge inside a graph 
+</div>
+</div><p>
+<a class="anchor" name="412a319c15f6fd2872214260423dcc5c"></a><!-- doxytag: member="cs::Graph::vertex" ref="412a319c15f6fd2872214260423dcc5c" args="(vertices_size_type n, const Graph &amp;myG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> vertex           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcs_1_1Graph.html#da2c176f48619603664816e5fa5d3b05">vertices_size_type</a>&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>myG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) <dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>the</em>&nbsp;</td><td>order of the vertex according to the insertion time, the specific graph </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>the vertex which was inserted according to the insertion time </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="ee65ffc9fac5b7b4cc2a91ab549d45c2"></a><!-- doxytag: member="cs::Graph::vertices" ref="ee65ffc9fac5b7b4cc2a91ab549d45c2" args="(const Graph &amp;mygraph)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classcs_1_1Graph_1_1vertex__iterator.html">vertex_iterator</a>, <a class="el" href="classcs_1_1Graph_1_1vertex__iterator.html">vertex_iterator</a>&gt; vertices           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcs_1_1Graph.html">Graph</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>mygraph</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+time:O(1) space: O(1) <dl compact><dt><b>Returns:</b></dt><dd>a pair of vertex iterator to iterates through all the vertices inside a specific graph </dd></dl>
+
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="7dec658b604cdea3a059c7f73861e7bd"></a><!-- doxytag: member="cs::Graph::g" ref="7dec658b604cdea3a059c7f73861e7bd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::set&lt;<a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a>&gt; &gt; <a class="el" href="classcs_1_1Graph.html#7dec658b604cdea3a059c7f73861e7bd">cs::Graph::g</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="afe116f1d0bbb4d5bcba22a976d514de"></a><!-- doxytag: member="cs::Graph::ind" ref="afe116f1d0bbb4d5bcba22a976d514de" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcs_1_1Graph.html#f3b5043a50bb003b52df18c833cbb26c">vertex_descriptor</a> <a class="el" href="classcs_1_1Graph.html#afe116f1d0bbb4d5bcba22a976d514de">cs::Graph::ind</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="Graph_8h-source.html">Graph.h</a></ul>
-<hr size="1"><address style="align: right;"><small>Generated on Sun Aug 9 19:47:29 2009 by&nbsp;
+<hr size="1"><address style="align: right;"><small>Generated on Sun Aug 9 19:48:38 2009 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7 </small></address>
 </body>
